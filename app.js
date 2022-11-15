@@ -22,6 +22,8 @@ const userHandlers = require("./userHandlers");
 
 app.get("/api/users", userHandlers.getUsers);
 app.get("/api/users/:id", userHandlers.getUserById);
+app.post("/api/users", userHandlers.postUser);
+app.put("/api/users/:id", userHandlers.updateUser);
 
 app.listen(port, (err) => {
   if (err) {
@@ -30,5 +32,3 @@ app.listen(port, (err) => {
     console.log(`Server is listening on ${port}`);
   }
 });
-
-app.post("/api/users", userHandlers.postUser);
