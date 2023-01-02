@@ -1,0 +1,29 @@
+Mejor hacerlo por postman
+
+
+POST http://localhost:5000/api/users
+
+Content-Type: application/json
+
+{
+    "firstname": "",
+    "lastname": "Perez",
+    "email": "Mick.perez@cliche.com",
+    "city": "Jaén",
+    "language": "Spanish",
+    "password": "hola" 
+}
+
+###
+
+PUT http://localhost:5000/api/users/1
+
+Content-Type: application/json
+
+{
+    "lastname": "Perez",
+    
+    "city": "Jaén",
+    "language": "Spanish",
+    "password": "hola" 
+}

@@ -1,3 +1,4 @@
+
 const database = require("./database");
 
 
@@ -37,6 +38,9 @@ const getUserById = (req, res) => {
 
     const postUser = (req, res) => {
       const { firstname, lastname, email, city, language } = req.body;
+      
+
+      /* axios.post("url", req.body = {firstname, lastname}) */
     
       database
         .query(

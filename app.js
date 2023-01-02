@@ -1,6 +1,8 @@
 require("dotenv").config();
 const express = require("express");
 
+const {validateUser} = require("./validators.js");
+
 const app = express();
 
 app.use(express.json()); 
@@ -22,8 +24,8 @@ const userHandlers = require("./userHandlers");
 
 app.get("/api/users", userHandlers.getUsers);
 app.get("/api/users/:id", userHandlers.getUserById);
-app.post("/api/users", userHandlers.postUser);
-app.put("/api/users/:id", userHandlers.updateUser);
+app.post("/api/users", validateUser, userHandlers.postUser);
+app.put("/api/users/:id", validateUser, userHandlers.updateUser);
 app.delete("/api/users/:id", userHandlers.deleteUser);
 
 app.listen(port, (err) => {
